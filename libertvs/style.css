@@ -1,0 +1,274 @@
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("fonts/ZillaSlab-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("fonts/ZillaSlab-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("fonts/ZillaSlab-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --fundo: #212121;
+  --texto: #ffffff;
+  --texto-suave: #b3b3b3;
+  --acento: #dda90d;
+  --acento-texto: #000000;
+  --largura-leitura: 640px;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--fundo); }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Zilla Slab", "Georgia", serif;
+  font-weight: 400;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pagina {
+  max-width: var(--largura-leitura);
+  margin: 0 auto;
+  padding: 4rem 1.25rem 6rem;
+}
+
+h1 {
+  font-family: "Zilla Slab", "Georgia", serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 8vw, 3.4rem);
+  letter-spacing: 0.02em;
+  margin: 0 0 1.75rem;
+  color: var(--acento);
+}
+
+strong {
+  font-weight: 700;
+  color: var(--acento);
+}
+
+p {
+  font-size: 1.05rem;
+  margin: 0 0 1.4rem;
+  color: var(--texto);
+}
+
+/* ---------- Bloco de acao ---------- */
+.cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.botao {
+  display: inline-block;
+  width: 100%;
+  max-width: 480px;
+  background: var(--acento);
+  color: var(--acento-texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-align: center;
+  padding: 1.1rem 1.5rem;
+  border-radius: 6px;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.botao:hover,
+.botao:focus-visible {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.botao:active {
+  transform: translateY(0);
+  filter: brightness(0.96);
+}
+
+.botao.clicado {
+  filter: brightness(0.9);
+  transform: scale(0.98);
+}
+
+.legenda {
+  margin: 1.1rem 0 0;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .pagina { padding: 2.75rem 1.1rem 4rem; }
+  h1 { font-size: 2.1rem; }
+  p { font-size: 1rem; }
+}
+
+/* ---------- Rodape ---------- */
+.rodape {
+  max-width: var(--largura-leitura);
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+  border-top: 1px solid #3a3a3a;
+  padding-top: 1.75rem;
+  text-align: center;
+}
+
+.rodape p {
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.rodape-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.rodape-links a {
+  color: var(--texto-suave);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rodape-links a:hover,
+.rodape-links a:focus-visible {
+  color: var(--acento);
+}
+
+.rodape-links span {
+  color: var(--texto-suave);
+}
+
+/* ---------- Banner de cookies ---------- */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #171717;
+  border-top: 1px solid #3a3a3a;
+  padding: 1rem 1.25rem;
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner p {
+  margin: 0;
+  max-width: 46rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--texto-suave);
+  text-align: left;
+}
+
+.cookie-banner a {
+  color: var(--texto);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-btn {
+  flex: 0 0 auto;
+  background: var(--acento);
+  color: var(--acento-texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  padding: 0.55rem 1.6rem;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.cookie-btn:hover,
+.cookie-btn:focus-visible {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 480px) {
+  .cookie-banner { flex-direction: column; align-items: stretch; text-align: center; }
+  .cookie-banner p { text-align: center; }
+  .cookie-btn { width: 100%; }
+}
+
+/* ---------- Paginas institucionais (privacidade / termos) ---------- */
+.legal {
+  max-width: var(--largura-leitura);
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 4rem;
+}
+
+.legal .voltar {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal .voltar:hover,
+.legal .voltar:focus-visible { color: var(--acento); }
+
+.legal h1 {
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  margin: 0 0 0.5rem;
+}
+
+.legal .atualizado {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--texto-suave);
+  margin: 0 0 2.4rem;
+}
+
+.legal h2 {
+  font-family: "Zilla Slab", "Georgia", serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--acento);
+  margin: 2.2rem 0 0.8rem;
+}
+
+.legal p, .legal li {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--texto);
+  margin: 0 0 1rem;
+}
+
+.legal ul { padding-left: 1.3rem; margin: 0 0 1rem; }
+
+.legal a { color: var(--texto); text-decoration: underline; text-underline-offset: 2px; }
+.legal a:hover, .legal a:focus-visible { color: var(--acento); }
